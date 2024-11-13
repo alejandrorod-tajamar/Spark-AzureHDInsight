@@ -113,8 +113,7 @@ spark-shell
 pyspark
 ```
 
-> Para salir de PySpark, hay dos opciones:
-> `CTRL` + `D`
+> Para salir de PySpark, hay dos opciones, la combinación de teclas `CTRL` + `D`, o también:
 > ```python
 > exit()
 > ```
