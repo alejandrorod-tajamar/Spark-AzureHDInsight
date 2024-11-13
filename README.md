@@ -176,7 +176,7 @@ spark.stop()
 En una **terminal local**, se puede usar el siguiente comando para copiar directamente el archivo al clúster usando scp:
 
 ```bash
-scp </ruta/local/del/archivo> <usuario_de_azure>@<nombre_del_cluster>-ssh.azurehdinsight.net:/home/admin01/
+scp </ruta/local/del/archivo> <usuario_de_azure>@<nombre_del_cluster>-ssh.azurehdinsight.net:/home/<usuario_de_azure>/
 ```
 
 ![image](https://github.com/user-attachments/assets/732c2e1d-f1be-4467-b90e-b9c222dd5fc6)
