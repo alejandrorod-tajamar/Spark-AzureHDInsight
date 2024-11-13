@@ -70,7 +70,7 @@ Esperar a que finalice la implementación (esto puede tardar entre 15 y 30 minut
 
 ---
 
-## 2. Conectar al clúster
+## 2 - Conectar al clúster
 
 Entrar al recurso del clúster, y buscar la sección de _Configuración_ >> _SSH e inicio de sesión del clúster_. Seleccionar el **nombre del host** en el desplegable, y copiar el comando que aparece debajo:
 
@@ -79,3 +79,45 @@ ssh <usuario>@<nombre_del_cluster>-ssh.azurehdinsight.net
 ```
 
 ![image](https://github.com/user-attachments/assets/8b642776-9421-4a93-970f-57fe716dc92d)
+
+Conectarse a una Cloud Shell.
+
+![image](https://github.com/user-attachments/assets/dc48336b-45c5-43d8-a21b-12325ecd18f0)
+
+Introducir el comando que se copió en el paso anterior e indicar la contraseña cuando sea solicitada:
+
+![image](https://github.com/user-attachments/assets/5e83c2a1-9208-4581-958e-db9ec88e18f9)
+
+## 3 - Usar Spark en HDInsight
+
+### 3.1 - Iniciar una sesión interactiva con Spark
+
+Una vez conectado al clúster:
+
+-	Ejecutar el siguiente comando para iniciar el Shell interactivo de Spark en **Scala**:
+
+```bash
+spark-shell
+```
+
+> Para salir de Spark (Scala):
+> ```bash
+> :quit
+> ```
+
+![image](https://github.com/user-attachments/assets/9ca5d279-3cd0-4b6b-b87a-51df12e46425)
+
+- Para trabajar con Python (**PySpark**):
+
+```scala
+pyspark
+```
+
+> Para salir de PySpark, hay dos opciones:
+> `CTRL` + `D`
+> ```python
+> exit()
+> ```
+
+![image](https://github.com/user-attachments/assets/438aea76-1652-442b-ac0f-aa688b843078)
+
