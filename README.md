@@ -120,3 +120,53 @@ pyspark
 
 ![image](https://github.com/user-attachments/assets/438aea76-1652-442b-ac0f-aa688b843078)
 
+### 3.2 - Ejecutar un ejemplo en Spark
+
+**Ejemplo en Scala:**
+
+Dentro del Shell de Spark, ejecutar este código para crear y mostrar un DataFrame:
+
+```scala
+val data = Seq(("Juan", 30), ("Josefa", 25), ("Chema", 35))
+val df = data.toDF("Nombre", "Edad")
+
+// Mostrar el contenido del DataFrame
+df.show()
+```
+
+**Ejemplo en Python (PySpark):**
+
+Si se está utilizando PySpark, el código sería el siguiente:
+
+```python
+data = [("Juan", 30), ("Josefa", 25), ("Chema", 35)]
+columns = ["Nombre", "Edad"]
+
+df = spark.createDataFrame(data, columns)
+
+# Mostrar el contenido del DataFrame
+df.show()
+```
+
+### 3.3 - Subir y ejecutar trabajos Spark
+
+En la **máquina local**, crear un Script PySpark (job.py):
+
+```python
+from pyspark.sql import SparkSession
+
+# Crear una sesión de Spark
+spark = SparkSession.builder.appName("EjemploSimple").getOrCreate()
+
+# Crear un DataFrame de ejemplo
+data = [("Juan", 30), ("Ana", 25), ("Carlos", 35)]
+columns = ["Nombre", "Edad"]
+
+df = spark.createDataFrame(data, columns)
+
+# Mostrar los datos
+df.show()
+
+# Finalizar la sesión
+spark.stop()
+```
