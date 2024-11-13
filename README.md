@@ -88,6 +88,8 @@ Introducir el comando que se copió en el paso anterior e indicar la contraseña
 
 ![image](https://github.com/user-attachments/assets/5e83c2a1-9208-4581-958e-db9ec88e18f9)
 
+---
+
 ## 3 - Usar Spark en HDInsight
 
 ### 3.1 - Iniciar una sesión interactiva con Spark
@@ -195,6 +197,8 @@ spark-submit job.py
 
 Observar los resultados directamente en la terminal.
 
+---
+
 ## 4 (Opcional) - Usar Jupyter Notebooks con HDInsight
 
 ### 4.1 - Ir al Dashboard del clúster
@@ -255,6 +259,8 @@ Se puede guardar el notebook, haciendo _click_ en _File_ >> _Save as_, para docu
 ![image](https://github.com/user-attachments/assets/880db44e-4600-4118-9f5b-8c8a408fd7d9)
 
 ![image](https://github.com/user-attachments/assets/5c930722-256a-4669-8af3-4109299734b7)
+
+---
 
 ## 5 - Detener el clúster
 
