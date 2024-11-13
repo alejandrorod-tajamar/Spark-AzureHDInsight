@@ -150,7 +150,7 @@ df.show()
 
 ### 3.3 - Subir y ejecutar trabajos Spark
 
-En la **máquina local**, crear un Script PySpark (job.py):
+En la **máquina local**, crear un Script PySpark (`job.py`):
 
 ```python
 from pyspark.sql import SparkSession
@@ -170,3 +170,112 @@ df.show()
 # Finalizar la sesión
 spark.stop()
 ```
+
+En una **terminal local**, se puede usar el siguiente comando para copiar directamente el archivo al clúster usando scp:
+
+```bash
+scp </ruta/local/del/archivo> <usuario_de_azure>@<nombre_del_cluster>-ssh.azurehdinsight.net:/home/admin01/
+```
+
+![image](https://github.com/user-attachments/assets/732c2e1d-f1be-4467-b90e-b9c222dd5fc6)
+
+De nuevo en la **Cloud Shell** de Azure, se puede comprobar también que el archivo se ha subido correctamente:
+
+```bash
+ls -l
+```
+
+![image](https://github.com/user-attachments/assets/a0524a69-6849-4622-a1c5-229818c5f24c)
+
+Para ejecutar el script y observar los resultados:
+
+```bash
+spark-submit job.py
+```
+
+Observar los resultados directamente en la terminal.
+
+## 4 (Opcional) - Usar Jupyter Notebooks con HDInsight
+
+### 4.1 - Ir al Dashboard del clúster
+
+En el portal de Azure, acceder al recurso HDInsight. En la sección de _Información general_, hacer _click_ en _Cuaderno de Jupyter_.
+
+![image](https://github.com/user-attachments/assets/645d8318-6a2e-474b-aee8-e62b097be88e)
+
+### 4.2 - Iniciar sesión
+
+Utilizar las credenciales que se configuraron al crear el clúster.
+
+![image](https://github.com/user-attachments/assets/8ef382de-7395-4fae-8057-f37fdf724352)
+
+### 4.3 - Crear un nuevo notebook
+
+En la página principal de Jupyter, hacer _click_ en **New** y seleccionar el kernel deseado (PySpark para Python y Spark para Scala). En este ejemplo, se utilizará **PySpark**, para poder usar el mismo código que en el ejemplo del paso `3.3`:
+
+![image](https://github.com/user-attachments/assets/b653f028-1bbb-4752-b9ef-1b237a6df9f9)
+
+![image](https://github.com/user-attachments/assets/925d3ca4-f870-45ee-bf0e-bf0ddbba8567)
+
+### 4.4 - Escribir el código
+
+Copiar el ejemplo del paso `3.3`, y ejecutar la celda (haciendo click en **Run**) para ver los resultados:
+
+```python
+from pyspark.sql import SparkSession
+
+# Crear una sesión de Spark
+spark = SparkSession.builder.appName("EjemploSimple").getOrCreate()
+
+# Crear un DataFrame de ejemplo
+data = [("Juan", 30), ("Ana", 25), ("Carlos", 35)]
+columns = ["Nombre", "Edad"]
+
+df = spark.createDataFrame(data, columns)
+
+# Mostrar los datos
+df.show()
+
+# Finalizar la sesión
+spark.stop()
+```
+
+![image](https://github.com/user-attachments/assets/b653fd76-81d9-4157-af2e-0a8d9826b968)
+
+Esperar a que termine el proceso:
+
+![image](https://github.com/user-attachments/assets/1b35cb75-3e65-4fb5-a9e0-8aad1066acc3)
+
+Comprobar los resultados en el propio cuaderno.
+
+### 4.5 - Guardar el notebook
+
+Se puede guardar el notebook, haciendo _click_ en _File_ >> _Save as_, para documentar procesos o reutilizar el código.
+
+![image](https://github.com/user-attachments/assets/880db44e-4600-4118-9f5b-8c8a408fd7d9)
+
+![image](https://github.com/user-attachments/assets/5c930722-256a-4669-8af3-4109299734b7)
+
+## 5 - Detener el clúster
+
+HDInsight cobra mientras el clúster está activo, incluso si no se está usando. La única forma de detenerlo es eliminarlo. En este caso, vamos a eliminar el grupo de recursos que se creó al principio, para evitar costes adicionales.
+
+Para detener el clúster, desde el portal de Azure:
+
+Acceder al grupo de recursos.
+
+![image](https://github.com/user-attachments/assets/fa09ceb8-5e28-46d7-b2a1-cb4d33c86670)
+
+![image](https://github.com/user-attachments/assets/0866369e-d119-4b08-8e71-5d36efaa117e)
+
+En el menú superior, hacer _click_ en _Eliminar grupo de recursos_.
+
+![image](https://github.com/user-attachments/assets/4a5c8049-7073-4738-a2ca-90427fd0485a)
+
+![image](https://github.com/user-attachments/assets/1d91a46d-9082-46ae-b0a1-419ba263e9e5)
+
+![image](https://github.com/user-attachments/assets/a1cbb30c-81f1-4639-b54a-28c65ac9641d)
+
+Por último, esperar a que se elimine por completo el grupo de recursos que incluye el clúster.
+
+![image](https://github.com/user-attachments/assets/dd457007-2e04-4978-80fc-95b6a9d4e977)
