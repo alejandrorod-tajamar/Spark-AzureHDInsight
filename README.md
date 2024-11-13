@@ -27,33 +27,55 @@ Seleccionar **Azure HDInsight** y hacer _click_ en **Crear** >> **Azure HDInsigh
 **Datos básicos**:
 
 - **Nombre del clúster**: Debe ser un nombre único para identificar el clúster.
-- **Suscripción**: Selecciona la suscripción de Azure.
-- **Grupo de recursos**: Crea un grupo de recursos o selecciona uno existente.
-- **Región**: Selecciona la región (por ejemplo, Italy North).
+- **Suscripción**: Seleccionar la suscripción de Azure.
+- **Grupo de recursos**: Crear un grupo de recursos o seleccionar uno existente.
+- **Región**: Seleccionar la región, en este caso, Italy North.
 
-2. **Tipo de clúster**:
-   - Selecciona **Spark**, y elige la última versión disponible.
+![image](https://github.com/user-attachments/assets/72738e01-687d-45b6-a2cc-b68b97ca2ea5)
 
-3. **Credenciales del clúster**:
-   - Crea unas credenciales de acceso para el clúster. Luego, haz clic en **Siguiente: Almacenamiento**.
+![image](https://github.com/user-attachments/assets/3aa0fb33-4bcb-4771-9a60-9132d8030ce0)
 
-4. **Almacenamiento**:
-   - **Tipo de almacenamiento principal**: Azure Storage.
-   - **Cuenta de almacenamiento principal**: Crea una nueva cuenta de almacenamiento y dale un nombre válido.
+- **Tipo de clúster**: Seleccionar **Spark**, y elegir la última versión disponible:
 
-5. **Configuración y precios**:
-   - En **Nodo Trabajador**, cambia el número de nodos de `4` a `1`.
-   - Deja el resto de las configuraciones como están y haz clic en **Revisar y crear**.
+![image](https://github.com/user-attachments/assets/0ffd8c87-4540-47e2-a168-ec6feac77f7e)
 
-6. Espera a que finalice la implementación (esto puede tardar entre 15 y 30 minutos).
+![image](https://github.com/user-attachments/assets/f81088a7-d773-47bb-89dc-cd8c85dc9787)
+
+![image](https://github.com/user-attachments/assets/fe6082a1-60e9-4948-a4a2-a01f1f3d06ca)
+
+- **Credenciales del clúster**: Crear unas credenciales de acceso para el clúster. Después, hacer _click_ en **Siguiente: Almacenamiento>>**:
+
+![image](https://github.com/user-attachments/assets/10a9b76a-5c3a-4da8-bf7b-e8e478e13b17)
+
+**Almacenamiento**:
+
+   - **Tipo de almacenamiento principal**: **Azure Storage**.
+   - **Cuenta de almacenamiento principal**: _Crear nuevo_ >> Introducir un nombre válido para la nueva cuenta de almacenamiento, y hacer _click_ en **De acuerdo**.
+
+   ![image](https://github.com/user-attachments/assets/683c468c-ae1a-4fe9-ba76-87981b6c40e1)
+
+   ![image](https://github.com/user-attachments/assets/c0960219-3a3b-43bf-8db5-b1898f625c48)
+
+**Configuración y precios**:
+
+   - En **Nodo Trabajador**, cambiar el número de nodos de `4` a `1`, para evitar el siguiente error:
+
+   ![image](https://github.com/user-attachments/assets/142556a7-6eb8-437e-940e-1a71b078cbef)
+     
+Dejar el resto de las configuraciones como están y hacer _click_ en **Revisar y crear**.
+
+Esperar a que finalice la implementación (esto puede tardar entre 15 y 30 minutos).
+
+![image](https://github.com/user-attachments/assets/cc9e36bf-f46a-4f51-9614-2fd6aab9712b)
 
 ---
 
 ## 2. Conectar al clúster
 
-1. Entra al recurso del clúster en el portal de Azure.
-2. Ve a la sección **Configuración** > **SSH e inicio de sesión del clúster**.
-3. Selecciona el nombre del host en el desplegable y copia el comando SSH que aparece debajo:
+Entrar al recurso del clúster, y buscar la sección de _Configuración_ >> _SSH e inicio de sesión del clúster_. Seleccionar el **nombre del host** en el desplegable, y copiar el comando que aparece debajo:
+
 ```bash
-ssh <usuario>@<nombre-del-cluster>-ssh.azurehdinsight.net
+ssh <usuario>@<nombre_del_cluster>-ssh.azurehdinsight.net
 ```
+
+![image](https://github.com/user-attachments/assets/8b642776-9421-4a93-970f-57fe716dc92d)
