@@ -18,14 +18,18 @@ Buscar **HDInsight** en la barra de búsqueda:
 
 ![image](https://github.com/user-attachments/assets/afdc8abf-6e62-46cf-9f85-e592b6994389)
 
-Seleccionar **Azure HDInsight** y hacer _click_ en **Crear** >> **Azure HDInsight**.
+Seleccionar **Azure HDInsight** y hacer _click_ en **Crear** >> **Azure HDInsight**:
 
-### 1.2 Configurar el clúster
-1. **Datos básicos**:
-   - **Nombre del clúster**: Debe ser un nombre único para identificar el clúster.
-   - **Suscripción**: Selecciona la suscripción de Azure.
-   - **Grupo de recursos**: Crea un grupo de recursos o selecciona uno existente.
-   - **Región**: Selecciona la región (por ejemplo, Italy North).
+![image](https://github.com/user-attachments/assets/31f1b753-31ba-4713-a738-965cb3b8d284)
+
+### 1.2 - Configurar el clúster
+
+**Datos básicos**:
+
+- **Nombre del clúster**: Debe ser un nombre único para identificar el clúster.
+- **Suscripción**: Selecciona la suscripción de Azure.
+- **Grupo de recursos**: Crea un grupo de recursos o selecciona uno existente.
+- **Región**: Selecciona la región (por ejemplo, Italy North).
 
 2. **Tipo de clúster**:
    - Selecciona **Spark**, y elige la última versión disponible.
