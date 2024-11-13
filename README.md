@@ -7,7 +7,7 @@ Azure HDInsight es un servicio gestionado que permite trabajar con herramientas 
 ## 1. Crear un clúster HDInsight con Spark
 
 ### 1.1 Crear un recurso HDInsight en el portal de Azure
-1. Accede al portal de Azure: [https://portal.azure.com](https://portal.azure.com).
+1. Accede al portal de [Azure](https://portal.azure.com).
 2. Haz clic en **Crear un recurso**.
 3. Busca **HDInsight** en la barra de búsqueda.
 4. Selecciona **Azure HDInsight** y haz clic en **Crear**.
