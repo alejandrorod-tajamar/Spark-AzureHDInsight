@@ -161,7 +161,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("EjemploSimple").getOrCreate()
 
 # Crear un DataFrame de ejemplo
-data = [("Juan", 30), ("Ana", 25), ("Carlos", 35)]
+data = [("Juan", 30), ("Josefa", 25), ("Chema", 35)]
 columns = ["Nombre", "Edad"]
 
 df = spark.createDataFrame(data, columns)
@@ -232,7 +232,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("EjemploSimple").getOrCreate()
 
 # Crear un DataFrame de ejemplo
-data = [("Juan", 30), ("Ana", 25), ("Carlos", 35)]
+data = [("Juan", 30), ("Josefa", 25), ("Chema", 35)]
 columns = ["Nombre", "Edad"]
 
 df = spark.createDataFrame(data, columns)
