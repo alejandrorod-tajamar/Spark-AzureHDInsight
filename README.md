@@ -42,6 +42,6 @@ Azure HDInsight es un servicio gestionado que permite trabajar con herramientas 
 1. Entra al recurso del clúster en el portal de Azure.
 2. Ve a la sección **Configuración** > **SSH e inicio de sesión del clúster**.
 3. Selecciona el nombre del host en el desplegable y copia el comando SSH que aparece debajo:
-   ```bash
-   ssh <usuario>@<nombre-del-cluster>-ssh.azurehdinsight.net
-   ```
+```bash
+ssh <usuario>@<nombre-del-cluster>-ssh.azurehdinsight.net
+```
